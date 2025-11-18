@@ -77,17 +77,36 @@ chmod +x /usr/local/bin/reconnect_jabra.sh
 Example output:
 
 ```
-Waiting for Jabra sink to appear... (1/15)
-Found Jabra sink: alsa_output.usb-0b0e_Jabra_Link_380_50C275433642-00.analog-stereo
-Found Jabra source: alsa_input.usb-0b0e_Jabra_Link_380_50C275433642-00.analog-mono
+Found Jabra sink: 81
+Found Jabra source: 82
 Jabra audio set as default sink/source successfully.
 ```
 
-## 5. (OPTIONAL) Automatically run the reconnect script on dongle plug-in
+## 5. (OPTIONAL) Create udev rule to automatically run reconnect script upon dongle plug-in
+
+Get Jabra's vendorID and Jabra Link 380's productID to be used in udev rule
+
+```bash
+lsusb
+```
+
+Example output:
+```
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 8087:8001 Intel Corp. Integrated Hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 003: ID 058f:9540 Alcor Micro Corp. AU9540 Smartcard Reader
+Bus 002 Device 006: ID 04f2:b449 Chicony Electronics Co., Ltd Integrated Camera
+Bus 002 Device 007: ID 0a12:4010 Cambridge Silicon Radio, Ltd 
+Bus 002 Device 008: ID 0b0e:24c8 GN Netcom Jabra Link 380
+Bus 003 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+```
+
+0b0e is vendorID and 24c8 productID
 
 Create the udev rule file with the udev script provided
 ```bash
-sudo nano /etc/udev/rules.d/99-jabra-rules
+sudo nano /etc/udev/rules.d/99-jabra.rules
 ```
 
 Save and exit, then reload udev rules:
