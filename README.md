@@ -1,6 +1,10 @@
-# Jabra 75 SE Setup on Ubuntu/Linux
+# Jabra 75 SE Setup on Ubuntu 24.04.2 LTS
 
-This repository contains instructions and scripts to get the **Jabra 75 SE wireless headset** working on Ubuntu/Linux, including handling the proprietary USB dongle, setting it as the default audio device, and optional automation for plug/replug.
+This repository contains instructions and scripts to get the **Jabra 75 SE wireless headset** working on Ubuntu 24.04.2 LTS, including handling the proprietary USB dongle, setting it as the default audio device, and optional automation for plug/replug.
+
+The Jabra Link 380 dongle is proprietary, so Linux cannot manage Bluetooth pairing with it. It works as a USB audio device only.
+
+PipeWire is required for this setup; the same commands work with PulseAudio compatibility layer.
 
 
 ## 1. Plug in the Jabra Link 380 USB dongle
