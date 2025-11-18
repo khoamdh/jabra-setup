@@ -1,7 +1,8 @@
 #!/bin/bash
 
-MAX_RETRIES=15
-SLEEP_TIME=1
+# Maximum retries
+MAX_RETRIES=10
+SLEEP_TIME=1  # seconds
 
 SINK=""
 SOURCE=""
@@ -22,8 +23,10 @@ if [ -z "$SINK" ]; then
     exit 1
 fi
 
+# Wait a bit for source (microphone) to appear
 sleep 1
-SOURCE=$(pactl list short sources | grep "Jabra_Link_380" | awk '{print $1}')
+
+SOURCE=$(pactl list short sources | grep -v "monitor" | grep "Jabra_Link_380" | awk '{print $1}')
 if [ ! -z "$SOURCE" ]; then
     echo "Found Jabra source: $SOURCE"
     pactl set-default-source "$SOURCE"

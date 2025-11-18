@@ -10,7 +10,7 @@ PipeWire is required for this setup; the same commands work with PulseAudio comp
 ## 1. Plug in the Jabra Link 380 USB dongle
 
 - Insert the dongle into a USB port.  
-- Make sure the headset is **powered on**.  
+- Make sure the headset is **powered on***.  
 - The dongle acts as a **USB audio device**, not a standard Bluetooth adapter.  
 
 Check available ALSA/PipeWire cards:
@@ -65,13 +65,13 @@ Some USB dongles take time to register in PipeWire after being re-plugged. This 
 
 ```bash
 # Create the script file with the reconnect script provided
-sudo nano usr/local/bin/reconnect_jabra.sh
+sudo nano /usr/local/bin/reconnect_jabra.sh
 
 # Make sure the script is executable
-chmod +x usr/local/bin/reconnect_jabra.sh
+chmod +x /usr/local/bin/reconnect_jabra.sh
 
 # Run the script
-./usr/local/bin/reconnect_jabra.sh
+/usr/local/bin/reconnect_jabra.sh
 ```
 
 Example output:
