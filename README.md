@@ -87,25 +87,19 @@ Jabra audio set as default sink/source successfully.
 Search for Jabra's vendorID and Jabra Link 380's productID, which would be used in udev rule
 
 ```bash
-# Display all USB devices connected
-lsusb
+# Search for the plugged in Jabra dongle
+lsusb | grep -i "jabra"
 ```
 
 Example output:
 ```
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 001 Device 002: ID 8087:8001 Intel Corp. Integrated Hub
-Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 002 Device 003: ID 058f:9540 Alcor Micro Corp. AU9540 Smartcard Reader
-Bus 002 Device 006: ID 04f2:b449 Chicony Electronics Co., Ltd Integrated Camera
-Bus 002 Device 007: ID 0a12:4010 Cambridge Silicon Radio, Ltd 
 Bus 002 Device 008: ID 0b0e:24c8 GN Netcom Jabra Link 380
-Bus 003 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 ```
 
 In the above example, 0b0e is vendorID and 24c8 productID
 
-Create the udev rule file with the udev script provided
+Create the udev rule file with the udev script provided (using the vendorID and productID)
+
 ```bash
 sudo nano /etc/udev/rules.d/99-jabra.rules
 ```
