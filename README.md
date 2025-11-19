@@ -10,7 +10,7 @@ PipeWire is required for this setup; the same commands work with PulseAudio comp
 ## 1. Plug in the Jabra Link 380 USB dongle
 
 - Insert the dongle into a USB port.  
-- Make sure the headset is **powered on***.  
+- Make sure the headset is **powered on**.  
 - The dongle acts as a **USB audio device**, not a standard Bluetooth adapter.  
 
 Check available ALSA/PipeWire cards:
