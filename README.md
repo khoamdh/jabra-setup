@@ -84,9 +84,10 @@ Jabra audio set as default sink/source successfully.
 
 ## 5. (OPTIONAL) Create udev rule to automatically run reconnect script upon dongle plug-in
 
-Get Jabra's vendorID and Jabra Link 380's productID to be used in udev rule
+Search for Jabra's vendorID and Jabra Link 380's productID, which would be used in udev rule
 
 ```bash
+# Display all USB devices connected
 lsusb
 ```
 
@@ -102,7 +103,7 @@ Bus 002 Device 008: ID 0b0e:24c8 GN Netcom Jabra Link 380
 Bus 003 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 ```
 
-0b0e is vendorID and 24c8 productID
+In the above example, 0b0e is vendorID and 24c8 productID
 
 Create the udev rule file with the udev script provided
 ```bash
