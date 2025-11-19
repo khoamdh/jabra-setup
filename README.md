@@ -4,7 +4,7 @@ This repository contains instructions and scripts to get the **Jabra 75 SE wirel
 
 The Jabra Link 380 dongle is proprietary, so Linux cannot manage Bluetooth pairing with it. It works as a USB audio device only.
 
-PipeWire is required for this setup; the same commands work with PulseAudio compatibility layer.
+PipeWire is required for this setup; the same commands work with PulseAudio compatibility layer. PipeWire is a low-level server and multimedia framework for handling audio and video streams on Linux. It was made the default audio server in Ubuntu beginning with version 22.10.
 
 
 ## 1. Plug in the Jabra Link 380 USB dongle
